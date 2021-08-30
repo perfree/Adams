@@ -87,3 +87,26 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
     });
 
 })(jQuery);
+
+
+(function ($) {
+    $(document).ready(function () {
+        if(typeof QRCode === "function" && $(".qrcode .img-box").length) {
+            let href = location.href;
+            if($("[rel='shortlink']").length){
+                href = $("[rel='shortlink']").get(0).href;
+            }
+            new QRCode($(".qrcode .img-box").get(0), href);
+        }
+        $('.infos .donate,.infos .share').unbind("click").click(function () {
+            let el = $('.infos');
+            if ($(this).attr('class') === 'donate') {
+                el.removeClass('share-close');
+                el.toggleClass('donate-close');
+            } else {
+                el.removeClass('donate-close');
+                el.toggleClass('share-close');
+            }
+        });
+    });
+})(jQuery);
