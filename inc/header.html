@@ -20,15 +20,14 @@
                 <li id="menu-item-4759"
                     class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
                     <a href="/" aria-current="page">首页</a></li>
-                <li id="menu-item-3351"
-                    class="czs-clothes-l menu-item menu-item-type-taxonomy menu-item-object-category">
-                    <a href="https://biji.io/cat/theme">作品</a></li>
-                <li id="menu-item-4754"
-                    class="czs-code-l menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                        href="https://biji.io/cat/coding">代码</a></li>
-                <li id="menu-item-3902"
-                    class="czs-gift-l menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                        href="https://biji.io/cat/write">随笔</a></li>
+
+                #menus()
+                    #for(menu : menus)
+                    <li id="menu-item" class=" menu-item">
+                        <a href="#(menu.url)" target="#(menu.target == 0 ? '_self' : '_blank')"><i class="fa #(menu.icon ??)"></i> #(menu.name ??)</a>
+                    </li>
+                    #end
+                #end
             </ul>
         </nav>
     </section>

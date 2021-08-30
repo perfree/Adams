@@ -753,3 +753,14 @@ body.night .setting_tool.search div.s input::placeholder {
     background: #393f56;
     color: #bdcadb;
 }
+.post-list .reade_more .disabled,.post-list .reade_more .disabled:hover{
+    color: rgba(0, 0, 0, 0.25);
+    border-color: #d9d9d9;
+    cursor: not-allowed;
+    background: initial;
+    pointer-events: none;
+}
+.post-list .reade_more .active{
+    background: #3274ff;
+    color: white;
+}

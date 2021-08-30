@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="/static/themes/Admas/static/css/style.css?1.0.0" type="text/css" rel="stylesheet">
     <link href="/static/themes/Admas/static/caomei/style.css?1.0.0" type="text/css" rel="stylesheet">
+    <link href="/static/public/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <title>#(SEO_TITLE ?? WEB_TITLE ?? '未设置')</title>
     <meta name="robots" content="max-image-preview:large">
     <script type="text/javascript" src="/static/themes/Admas/static/js/jquery.min.js?1.0.0" id="jquery-min-js"></script>
     <script type="text/javascript" src="/static/themes/Admas/static/js/qrCode.min.js?1.0.0" id="qrcode-js-js"></script>
     <script type="text/javascript" src="/static/themes/Admas/static/js/script.js?1.0.0" id="script-js-js"></script>
     <script type="text/javascript" src="/static/themes/Admas/static/js/prettify.js?1.0.0" id="prettify-js"></script>
-    <script type="text/javascript" src="/static/themes/Admas/static/js/instantclick.js?1.0.0" id="instantclick-js"></script>
     <style type="text/css">
         img#wpstats {
             display: none
@@ -96,29 +96,6 @@
             }
         });
     })(jQuery);
-    InstantClick.on('change', function (isInitialLoad) {
-        jQuery.adamsOverload();
-        if (isInitialLoad === false) {
-            // support MathJax
-            if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            // support google code prettify
-            if (typeof prettyPrint !== 'undefined') prettyPrint();
-            // support 百度统计
-            if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
-            // support google analytics
-            if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
-        }
-    });
-    InstantClick.on('wait', function () {
-        // pjax href click
-    });
-    InstantClick.on('fetch', function () {
-        // pjax begin
-    });
-    InstantClick.on('receive', function () {
-        // pjax end
-    });
-    InstantClick.init('mousedown');
 </script>
 <!--网站效率：0.759秒内查询了7次数据库-->
 
