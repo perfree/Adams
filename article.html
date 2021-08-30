@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="./static/css/style.css?1.0.0" type="text/css" rel="stylesheet">
+    <link href="./static/caomei/style.css?1.0.0" type="text/css" rel="stylesheet">
+    <title>设计笔记 – 无限进步</title>
+    <meta name="robots" content="max-image-preview:large">
+    <script type="text/javascript" src="./static/js/jquery.min.js?1.0.0" id="jquery-min-js"></script>
+    <script type="text/javascript" src="./static/js/qrCode.min.js?1.0.0" id="qrcode-js-js"></script>
+    <script type="text/javascript" src="./static/js/script.js?1.0.0" id="script-js-js"></script>
+    <script type="text/javascript" src="./static/js/prettify.js?1.0.0" id="prettify-js"></script>
+    <script type="text/javascript" src="./static/js/instantclick.js?1.0.0" id="instantclick-js"></script>
+    <style type="text/css">
+        img#wpstats {
+            display: none
+        }
+    </style>
+    <link rel="icon" href="./static/images/favicon.ico" sizes="32x32">
+    <link rel="icon" href="./static/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" href="./static/images/favicon.ico">
+    <meta name="msapplication-TileImage" content="./static/images/favicon.ico">
+    <style type="text/css" id="wp-custom-css">
+        .header>.container::before {
+            content: '';
+            position: absolute;
+            top: -4rem;
+            width: 4px;
+            height: 4px;
+            background-color: red;
+            box-shadow: 4px 0 orange, 8px 0 yellow, 12px 0 green, 16px 0 blue, 20px 0 purple;
+        }
+    </style>
+    <style>
+        #instantclick {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 2147483647;
+            transition: opacity .25s .1s
+        }
+
+        .instantclick-bar {
+            background: #29d;
+            width: 100%;
+            margin-left: -100%;
+            height: 2px;
+            transition: all .25s
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
+    </script>
+    <!-- Header -->
+    <header class="header">
+        <section class="container">
+            <hgroup itemscope="" itemtype="https://schema.org/WPHeader">
+                <h1 class="fullname"> Adams免费发布，又一款WordPress主题</h1>
+            </hgroup>
+            <nav class="social">
+                <ul id="menu-socialx" class="menu">
+                    <li id="menu-item-4834" class="czs-weibo menu-item menu-item-type-custom menu-item-object-custom"><a
+                            target="_blank" href="http://weibo.com/742206125">WeiBo</a></li>
+                    <li id="menu-item-4832"
+                        class="czs-github-logo menu-item menu-item-type-custom menu-item-object-custom"><a
+                            title="GitHub" target="_blank" href="https://github.com/Tokinx">GitHub</a></li>
+                    <li id="menu-item-4831" class="czs-rss menu-item menu-item-type-custom menu-item-object-custom"><a
+                            title="RSS" target="_blank" href="/feed">RSS</a></li>
+                </ul>
+            </nav>
+            <nav class="header_nav">
+                <ul id="menu-header" class="menu">
+                    <li id="menu-item-4759"
+                        class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom menu-item-4759"><a
+                            href="/">首页</a></li>
+                    <li id="menu-item-3351"
+                        class="czs-clothes-l menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3351">
+                        <a href="https://biji.io/cat/theme">作品</a></li>
+                    <li id="menu-item-4754"
+                        class="czs-code-l menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4754"><a
+                            href="https://biji.io/cat/coding">代码</a></li>
+                    <li id="menu-item-3902"
+                        class="czs-gift-l menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3902"><a
+                            href="https://biji.io/cat/write">随笔</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="infos fixed">
+            <div class="container">
+                <h2 class="fixed-title"> Adams免费发布，又一款WordPress主题</h2>
+                <!--<div class="fixed-menus"></div>-->
+
+                <div class="fields">
+                    <span><i class="czs-time-l"></i> <time datetime="2017-04-28T18:19:00+08:00"
+                            title="2017/04/28 18:19:00" itemprop="datePublished" pubdate="">4年前</time></span> /
+                    <span><i class="czs-talk-l"></i> 718评</span> /
+                    <a href="javascript:;" data-action="topTop" data-id="4905" class="dot-good ">
+                        <i class="czs-thumbs-up-l"></i><i class="czs-thumbs-up"></i>
+                        <span class="count">404</span>赞
+                    </a>
+                </div>
+
+                <div class="socials">
+                    <div class="donate">
+                        <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
+                        <div class="window">
+                            <ul>
+                                <li class="alipay"><img
+                                        src="https://biji-cdn.wuzii.com/wp-content/uploads/c_alipay.png"></li>
+                                <li><img src="https://biji-cdn.wuzii.com/wp-content/uploads/c_wxpay.png"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <a href="javascript:void(0);"
+                            data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;margin=10&amp;data=https://biji.io/2017/4905.html">
+                            <i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
+                        <div class="qrcode">
+                            <div class="img-box" title="https://biji.io/?p=5232"><canvas width="256" height="256"
+                                    style="display: none;"></canvas><img
+                                    src="data:image/png;base64,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"
+                                    style="display: block;"></div> <i>移动设备上继续阅读</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header><!-- Content -->
+    <section class="container">
+        <article class="post_article" itemscope="" itemtype="https://schema.org/Article">
+
+            <p>本来打算自用的主题，架不住隔三差五有小伙伴联系我，于是打算4月底发布它，但是这个月实在太忙了，下班回去又懒得开电脑，一拖再拖，直到明天要放假，所以今天不得不百忙中抽出一点时间糊弄一下大家。</p>
+
+
+
+            <p>没错，我就是单纯的加了一个更新推送，自己在本地测试了两遍，貌似是没啥问题，打包发出来。</p>
+
+
+
+            <div class="wp-block-image">
+                <figure class="aligncenter"><img loading="lazy" width="920" height="470"
+                        src="https://biji-cdn.wuzii.com/wp-content/uploads/adams.png" alt="" class="wp-image-4906"
+                        srcset="https://biji-cdn.wuzii.com/wp-content/uploads/adams.png 920w, https://biji-cdn.wuzii.com/wp-content/uploads/adams-768x392.png 768w"
+                        sizes="(max-width: 920px) 100vw, 920px"></figure>
+            </div>
+
+
+
+            <h3>主题介绍</h3>
+
+
+
+            <ol>
+                <li>极简、轻量化的设计风格</li>
+                <li>深度优化InstantClick的pjax效果</li>
+                <li>响应式布局，不依赖js的导航响应式</li>
+                <li>ajax动态加载二维码</li>
+                <li>前台阅读模式切换（预计1.1.0版本）</li>
+                <li>强劲的性能优化</li>
+                <li>Ajax无刷新评论、翻页</li>
+                <li>来自<a href="https://tokinx.github.io/ViewImage" rel="external"
+                        target="_blank">ViewImage</a>驱动的极简灯箱（1kb）</li>
+                <li><a href="https://tokinx.github.io/lately/" rel="external"
+                        target="_blank">Lately</a>驱动的时间格式化插件（800字节）</li>
+            </ol>
+
+
+
+            <h3>下载主题</h3>
+
+
+
+            <p>WordPress版：<a href="https://github.com/Tokinx/Adams" rel="external" target="_blank">前往Github下载</a></p>
+
+
+
+            <h3>奇技淫巧</h3>
+
+
+
+            <p></p>
+
+
+
+            <h4>Tips1&nbsp;- 创建SNS导航：</h4>
+
+
+
+            <blockquote class="wp-block-quote">
+                <p><strong><span style="color: #ff6600;">1.2.5版本改动：</span></strong></p>
+                <p>新版已经使用创造狮提供的开源图标：<a href="http://chuangzaoshi.com/icon/" target="_blank" rel="external">草莓ICON</a>
+                    设置icon，请前往 http://chuangzaoshi.com/icon/ 获取对应图标的name，按照原方法填写即可</p>
+            </blockquote>
+
+
+
+            <p>创建一个菜单，名字随意，添加一个自定义链接，普通icon参数如下：</p>
+
+
+
+            <div class="wp-block-image">
+                <figure class="aligncenter"><img loading="lazy" width="771" height="312"
+                        src="https://biji-cdn.wuzii.com/wp-content/uploads/E844C8FD-6A61-4740-A663-050355CB8E1E.jpg"
+                        alt="" class="wp-image-4907"
+                        srcset="https://biji-cdn.wuzii.com/wp-content/uploads/E844C8FD-6A61-4740-A663-050355CB8E1E.jpg 771w, https://biji-cdn.wuzii.com/wp-content/uploads/E844C8FD-6A61-4740-A663-050355CB8E1E-768x311.jpg 768w"
+                        sizes="(max-width: 771px) 100vw, 771px"></figure>
+            </div>
+
+
+
+            <p>如果是微信这种二维码，可以参考如下：</p>
+
+
+
+            <div class="wp-block-image">
+                <figure class="aligncenter"><img loading="lazy" width="722" height="327"
+                        src="https://biji-cdn.wuzii.com/wp-content/uploads/7DF5CA90-0495-46B7-9848-824897438EFA.jpg"
+                        alt="" class="wp-image-4908"></figure>
+            </div>
+
+
+
+            <p>1.0.9版本开始主题已经上传到Github，更新日志请前往Github查阅：<a href="https://github.com/Tokinx/Adams/commits/master"
+                    target="_blank" rel="external">https://github.com/Tokinx/Adams/commits/master</a></p>
+
+
+
+            <h3>说明：</h3>
+
+
+
+            <p>主题自带更新推送，不建议直接在原主题上修改代码，否则更新后修改部分会被覆盖，建议使用<strong>子主题</strong>模式对主题进行二次开发。</p>
+
+
+
+            <p>欢迎广大侠义之士将本主题移植到其它平台，如果移植过程遇到问题，可以邮件联系。</p>
+
+
+
+            <p>最后，请保留主题版权。</p>
+        </article>
+        <ul class="tags">
+            <li><a href="https://biji.io/tag/adams" rel="tag">Adams</a></li>
+            <li><a href="https://biji.io/tag/WordPress主题" rel="tag">WordPress主题</a></li>
+            <li><a href="https://biji.io/tag/主题" rel="tag">主题</a></li>
+        </ul>
+        <nav class="nearbypost">
+            <div class="alignleft"><a href="https://biji.io/2017/4776.html" rel="prev">日常除草</a></div>
+            <div class="alignright"><a href="https://biji.io/2017/4912.html" rel="next">Adams网易云音乐独立版</a></div>
+        </nav>
+    </section><!-- Comments -->
+    <section class="comments">
+        <div class="container" data-no-instant="">
+            <div id="comments" class="comments-area">
+                <ol class="comment-list">
+                    <li class="comment even thread-even depth-1 parent" id="comment-16694">
+                        <div id="div-comment-16694" class="comment-body">
+                            <div class="comment-author vcard">
+                                <img alt=""
+                                    src="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=32&amp;d=mm&amp;r=g"
+                                    srcset="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=64&amp;d=mm&amp;r=g 2x"
+                                    class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
+                                    class="fn">BIGEYES</cite><span class="says">说道：</span>
+                            </div>
+
+                            <div class="comment-meta commentmetadata">
+                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16694"
+                                    title="2021/08/10 16:47">19天前</a>
+                            </div>
+
+                            <p>大佬问一下 我的头像怎么都是白的 头像加速那个需要替换什么连接？</p>
+
+                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                    href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16694#respond"
+                                    data-commentid="16694" data-postid="4905" data-belowelement="div-comment-16694"
+                                    data-respondelement="respond" data-replyto="回复给BIGEYES"
+                                    aria-label="回复给BIGEYES">回复</a></div>
+                        </div>
+                        <ul class="children">
+                            <li class="comment byuser comment-author-admin bypostauthor odd alt depth-2 parent"
+                                id="comment-16695">
+                                <div id="div-comment-16695" class="comment-body">
+                                    <div class="comment-author vcard">
+                                        <img alt=""
+                                            src="https:////gravatar.loli.net/avatar/22278c1d83002246dca48b52e306b1c9?s=32&amp;d=mm&amp;r=g"
+                                            srcset="https:////gravatar.loli.net/avatar/22278c1d83002246dca48b52e306b1c9?s=64&amp;d=mm&amp;r=g 2x"
+                                            class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
+                                            class="fn"><a href="https://biji.io" rel="external nofollow ugc"
+                                                class="url">Tokin</a></cite><span class="says">说道：</span>
+                                    </div>
+
+                                    <div class="comment-meta commentmetadata">
+                                        <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16695"
+                                            title="2021/08/10 22:25">19天前</a>
+                                    </div>
+
+                                    <p>@<a href="#comment-16694">BIGEYES</a> 我现在用的是<code
+                                            class="prettyprint prettyprinted"
+                                            style=""><span class="com">//gravatar.loli.net/avatar</span></code></p>
+
+                                    <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                            href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16695#respond"
+                                            data-commentid="16695" data-postid="4905"
+                                            data-belowelement="div-comment-16695" data-respondelement="respond"
+                                            data-replyto="回复给Tokin" aria-label="回复给Tokin">回复</a></div>
+                                </div>
+                                <ul class="children">
+                                    <li class="comment even depth-3" id="comment-16696">
+                                        <div id="div-comment-16696" class="comment-body">
+                                            <div class="comment-author vcard">
+                                                <img alt=""
+                                                    src="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=32&amp;d=mm&amp;r=g"
+                                                    srcset="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=64&amp;d=mm&amp;r=g 2x"
+                                                    class="avatar avatar-32 photo" height="32" width="32"
+                                                    loading="lazy"> <cite class="fn">BIGEYES</cite><span
+                                                    class="says">说道：</span>
+                                            </div>
+
+                                            <div class="comment-meta commentmetadata">
+                                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16696"
+                                                    title="2021/08/11 07:56">19天前</a>
+                                            </div>
+
+                                            <p>@<a href="#comment-16695">Tokin</a> 好的 谢谢你</p>
+
+                                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                                    href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16696#respond"
+                                                    data-commentid="16696" data-postid="4905"
+                                                    data-belowelement="div-comment-16696" data-respondelement="respond"
+                                                    data-replyto="回复给BIGEYES" aria-label="回复给BIGEYES">回复</a></div>
+                                        </div>
+                                    </li><!-- #comment-## -->
+                                </ul><!-- .children -->
+                            </li><!-- #comment-## -->
+                        </ul><!-- .children -->
+                    </li><!-- #comment-## -->
+                    <li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-16692">
+                        <div id="div-comment-16692" class="comment-body">
+                            <div class="comment-author vcard">
+                                <img alt=""
+                                    src="https:////gravatar.loli.net/avatar/75375694b1b1a26c960afef793ab95a9?s=32&amp;d=mm&amp;r=g"
+                                    srcset="https:////gravatar.loli.net/avatar/75375694b1b1a26c960afef793ab95a9?s=64&amp;d=mm&amp;r=g 2x"
+                                    class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
+                                    class="fn">张飞</cite><span class="says">说道：</span>
+                            </div>
+
+                            <div class="comment-meta commentmetadata">
+                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16692"
+                                    title="2021/08/08 19:03">21天前</a>
+                            </div>
+
+                            <p>大哥，我用的这个，但是怎么弄多个文章页呀，目前我这边只有一个文章页，点击其他的都是单个页面，让输入内容，很苦恼。</p>
+
+                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                    href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16692#respond"
+                                    data-commentid="16692" data-postid="4905" data-belowelement="div-comment-16692"
+                                    data-respondelement="respond" data-replyto="回复给张飞" aria-label="回复给张飞">回复</a></div>
+                        </div>
+                        <ul class="children">
+                            <li class="comment even depth-2 parent" id="comment-16701">
+                                <div id="div-comment-16701" class="comment-body">
+                                    <div class="comment-author vcard">
+                                        <img alt=""
+                                            src="https:////gravatar.loli.net/avatar/755883554b72848fa97efe6693765fea?s=32&amp;d=mm&amp;r=g"
+                                            srcset="https:////gravatar.loli.net/avatar/755883554b72848fa97efe6693765fea?s=64&amp;d=mm&amp;r=g 2x"
+                                            class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
+                                            class="fn"><a href="http://www.jioluo.com" rel="external nofollow ugc"
+                                                class="url">角落吧</a></cite><span class="says">说道：</span>
+                                    </div>
+
+                                    <div class="comment-meta commentmetadata">
+                                        <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16701"
+                                            title="2021/08/22 01:22">8天前</a>
+                                    </div>
+
+                                    <p>@<a href="#comment-16692">张飞</a> 用WPAJM 这个插件吧，里面有文章置顶功能</p>
+
+                                    <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                            href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16701#respond"
+                                            data-commentid="16701" data-postid="4905"
+                                            data-belowelement="div-comment-16701" data-respondelement="respond"
+                                            data-replyto="回复给角落吧" aria-label="回复给角落吧">回复</a></div>
+                                </div>
+                                <ul class="children">
+                                    <li class="comment odd alt depth-3" id="comment-16702">
+                                        <div id="div-comment-16702" class="comment-body">
+                                            <div class="comment-author vcard">
+                                                <img alt=""
+                                                    src="https:////gravatar.loli.net/avatar/3144178115aa01b8ee24766d0c584ab4?s=32&amp;d=mm&amp;r=g"
+                                                    srcset="https:////gravatar.loli.net/avatar/3144178115aa01b8ee24766d0c584ab4?s=64&amp;d=mm&amp;r=g 2x"
+                                                    class="avatar avatar-32 photo" height="32" width="32"
+                                                    loading="lazy"> <cite class="fn">张飞</cite><span
+                                                    class="says">说道：</span>
+                                            </div>
+
+                                            <div class="comment-meta commentmetadata">
+                                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16702"
+                                                    title="2021/08/22 14:10">7天前</a>
+                                            </div>
+
+                                            <p>@<a href="#comment-16701">角落吧</a> 没事，我现在都改用成分类目录了，也可以实现</p>
+
+                                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
+                                                    href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16702#respond"
+                                                    data-commentid="16702" data-postid="4905"
+                                                    data-belowelement="div-comment-16702" data-respondelement="respond"
+                                                    data-replyto="回复给张飞" aria-label="回复给张飞">回复</a></div>
+                                        </div>
+                                    </li><!-- #comment-## -->
+                                </ul><!-- .children -->
+                            </li><!-- #comment-## -->
+                        </ul><!-- .children -->
+                    </li><!-- #comment-## -->
+                </ol>
+
+                <nav class="navigation comment-navigation" role="navigation" aria-label="评论">
+                    <h2 class="screen-reader-text">评论导航</h2>
+                    <div class="nav-links">
+                        <div class="nav-previous"><a href="https://biji.io/2017/4905.html/comment-page-39#comments">Old
+                                comments</a></div>
+                    </div>
+                </nav>
+            </div>
+            <div id="respond" class="comment-respond">
+                <h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow"
+                            id="cancel-comment-reply-link" href="/2017/4905.html#respond"
+                            style="display:none;">取消回复</a></small></h3>
+                <form action="https://biji.io/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+                    <p class="comment-notes"><span id="email-notes">您的电子邮箱地址不会被公开。</span> 必填项已用<span
+                            class="required">*</span>标注</p>
+                    <p class="comment-form-author"><label for="author">显示名称 <span class="required">*</span></label>
+                        <input id="author" name="author" type="text" value="perfree" size="30" maxlength="245"
+                            required="required"></p>
+                    <p class="comment-form-email"><label for="email">电子邮箱地址 <span class="required">*</span></label>
+                        <input id="email" name="email" type="text" value="perfree@126.com" size="30" maxlength="100"
+                            aria-describedby="email-notes" required="required"></p>
+                    <p class="comment-form-url"><label for="url">网站地址</label> <input id="url" name="url" type="text"
+                            value="http://www.yinpengfei.com" size="30" maxlength="200"></p>
+                    <p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment"
+                            name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+                    <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论">
+                        <input type="hidden" name="comment_post_ID" value="4905" id="comment_post_ID">
+                        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                    </p>
+                </form>
+            </div><!-- #respond -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <section class="container">
+            <ul id="menu-bottom" class="menu">
+                <li id="menu-item-3357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3357">
+                    <a href="https://biji.io/about">关于博主</a></li>
+                <li id="menu-item-3356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3356">
+                    <a href="https://biji.io/links">友情链接</a></li>
+                <li id="menu-item-4787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4787">
+                    <a href="https://biji.io/archives">文章归档</a></li>
+                <li id="menu-item-3355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3355">
+                    <a href="https://biji.io/thelist">榜上有名</a></li>
+            </ul>
+            <div style="display: flex;justify-content: space-between;">
+                <div class="left">
+                    <span>© 2021 <a href="https://biji.io">设计笔记</a></span>
+                </div>
+                <div class="right">
+                    <span>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <div class="setting_tool iconfont">
+        <a class="back2top" style=""><i class="czs-arrow-up-l"></i></a>
+        <a class="home" href="https://biji.io"><i class="czs-home-l"></i></a>
+        <a class="sosearch"><i class="czs-search-l"></i></a>
+        <a class="socolor"><i class="czs-clothes-l"></i></a>
+        <div class="s">
+            <form method="get" action="https://biji.io" class="search">
+                <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value=""
+                    required="required">
+            </form>
+        </div>
+        <div class="c">
+            <ul>
+                <li class="color undefined">默认</li>
+                <li class="color sepia">护眼</li>
+                <li class="color night">夜晚</li>
+                <li class="hr"></li>
+                <li class="font serif">Serif</li>
+                <li class="font sans">Sans</li>
+            </ul>
+        </div>
+    </div>
+
+    <script data-no-instant="">
+        (function ($) {
+            $.extend({
+                adamsOverload: function () {
+                    $(".post_article a").attr("rel", "external");
+                    $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
+                    $("a.vi,.gallery a,.attachment a").attr("rel", "");
+                    $.viewImage({
+                        'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
+                        'exclude': '.readerswall img,.gallery a img,.attachment a img'
+                    });
+                    Lately({
+                        'target': '.commentmetadata a:first-child,.infos time,.post-list time'
+                    });
+                    prettyPrint();
+
+                    $('ul.links li a').each(function () {
+                        if ($(this).parent().find('.bg').length === 0) {
+                            $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
+                        }
+                    });
+
+                    // * Safari
+                    if (navigator.vendor.indexOf("Apple") > -1) {
+                        $("[srcset]").each((index, img) => {
+                            img.outerHTML = img.outerHTML;
+                        });
+                    }
+                    if ($('.placard').length) {
+                        $.get("https://v1.hitokoto.cn", (data) => {
+                            $('.placard').text(data.hitokoto);
+                        });
+                    }
+                }
+            });
+        })(jQuery);
+        InstantClick.on('change', function (isInitialLoad) {
+            jQuery.adamsOverload();
+            if (isInitialLoad === false) {
+                // support MathJax
+                if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                // support google code prettify
+                if (typeof prettyPrint !== 'undefined') prettyPrint();
+                // support 百度统计
+                if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
+                // support google analytics
+                if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
+            }
+        });
+        InstantClick.on('wait', function () {
+            // pjax href click
+        });
+        InstantClick.on('fetch', function () {
+            // pjax begin
+        });
+        InstantClick.on('receive', function () {
+            // pjax end
+        });
+        InstantClick.init('mousedown');
+    </script>
+    <!--网站效率：0.759秒内查询了7次数据库-->
+
+
+    <!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 1823 objects (208 KB) from Redis using Predis (v1.1.6).
+-->
+    <img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A10.0&amp;blog=139908490&amp;post=0&amp;tz=8&amp;srv=biji.io&amp;host=biji.io&amp;ref=&amp;fcp=1471&amp;rand=0.4540617920752088"
+        alt=":)" width="6" height="5" id="wpstats">
+    <div id="instantclick" style="opacity: 0;">
+        <div id="instantclick-bar" class="instantclick-bar" style="transform: translate(100%);"></div>
+    </div>
+</body>
+
+</html>
