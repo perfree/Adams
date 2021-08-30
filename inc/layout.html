@@ -1,0 +1,139 @@
+#define layout()
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/static/themes/Admas/static/css/style.css?1.0.0" type="text/css" rel="stylesheet">
+    <link href="/static/themes/Admas/static/caomei/style.css?1.0.0" type="text/css" rel="stylesheet">
+    <title>#(SEO_TITLE ?? WEB_TITLE ?? '未设置')</title>
+    <meta name="robots" content="max-image-preview:large">
+    <script type="text/javascript" src="/static/themes/Admas/static/js/jquery.min.js?1.0.0" id="jquery-min-js"></script>
+    <script type="text/javascript" src="/static/themes/Admas/static/js/qrCode.min.js?1.0.0" id="qrcode-js-js"></script>
+    <script type="text/javascript" src="/static/themes/Admas/static/js/script.js?1.0.0" id="script-js-js"></script>
+    <script type="text/javascript" src="/static/themes/Admas/static/js/prettify.js?1.0.0" id="prettify-js"></script>
+    <script type="text/javascript" src="/static/themes/Admas/static/js/instantclick.js?1.0.0" id="instantclick-js"></script>
+    <style type="text/css">
+        img#wpstats {
+            display: none
+        }
+    </style>
+    <link rel="icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')" sizes="32x32">
+    <link rel="icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')" sizes="192x192">
+    <link rel="apple-touch-icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')">
+    <meta name="msapplication-TileImage" content="#option('WEB_LOGO','/static/public/images/favicon.ico')">
+    <style type="text/css" id="wp-custom-css">
+        .header>.container::before {
+            content: '';
+            position: absolute;
+            top: -4rem;
+            width: 4px;
+            height: 4px;
+            background-color: red;
+            box-shadow: 4px 0 orange, 8px 0 yellow, 12px 0 green, 16px 0 blue, 20px 0 purple;
+        }
+    </style>
+    <style>
+        #instantclick {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 2147483647;
+            transition: opacity .25s .1s
+        }
+
+        .instantclick-bar {
+            background: #29d;
+            width: 100%;
+            margin-left: -100%;
+            height: 2px;
+            transition: all .25s
+        }
+    </style>
+    #@css?()
+</head>
+<body>
+<script>
+    $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
+</script>
+#include("/static/themes/Admas/inc/header.html")
+#@content()
+#include("/static/themes/Admas/inc/footer.html")
+<script data-no-instant="">
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $(".post_article a").attr("rel", "external");
+                $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
+                $("a.vi,.gallery a,.attachment a").attr("rel", "");
+                $.viewImage({
+                    'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
+                    'exclude': '.readerswall img,.gallery a img,.attachment a img'
+                });
+                Lately({
+                    'target': '.commentmetadata a:first-child,.infos time,.post-list time'
+                });
+                prettyPrint();
+
+                $('ul.links li a').each(function () {
+                    if ($(this).parent().find('.bg').length === 0) {
+                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
+                    }
+                });
+
+                // * Safari
+                if (navigator.vendor.indexOf("Apple") > -1) {
+                    $("[srcset]").each((index, img) => {
+                        img.outerHTML = img.outerHTML;
+                    });
+                }
+                if ($('.placard').length) {
+                    $.get("https://v1.hitokoto.cn", (data) => {
+                        $('.placard').text(data.hitokoto);
+                    });
+                }
+            }
+        });
+    })(jQuery);
+    InstantClick.on('change', function (isInitialLoad) {
+        jQuery.adamsOverload();
+        if (isInitialLoad === false) {
+            // support MathJax
+            if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            // support google code prettify
+            if (typeof prettyPrint !== 'undefined') prettyPrint();
+            // support 百度统计
+            if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
+            // support google analytics
+            if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
+        }
+    });
+    InstantClick.on('wait', function () {
+        // pjax href click
+    });
+    InstantClick.on('fetch', function () {
+        // pjax begin
+    });
+    InstantClick.on('receive', function () {
+        // pjax end
+    });
+    InstantClick.init('mousedown');
+</script>
+<!--网站效率：0.759秒内查询了7次数据库-->
+
+
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 1823 objects (208 KB) from Redis using Predis (v1.1.6).
+-->
+<img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A10.0&amp;blog=139908490&amp;post=0&amp;tz=8&amp;srv=biji.io&amp;host=biji.io&amp;ref=&amp;fcp=1471&amp;rand=0.4540617920752088"
+     alt=":)" width="6" height="5" id="wpstats">
+<div id="instantclick" style="opacity: 0;">
+    <div id="instantclick-bar" class="instantclick-bar" style="transform: translate(100%);"></div>
+</div>
+#@script?()
+</body>
+</html>
+#end
