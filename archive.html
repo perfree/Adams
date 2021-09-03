@@ -1,69 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="./static/css/style.css?1.0.0" type="text/css" rel="stylesheet">
-    <link href="./static/caomei/style.css?1.0.0" type="text/css" rel="stylesheet">
-    <title>设计笔记 – 无限进步</title>
-    <meta name="robots" content="max-image-preview:large">
-    <script type="text/javascript" src="./static/js/jquery.min.js?1.0.0" id="jquery-min-js"></script>
-    <script type="text/javascript" src="./static/js/qrCode.min.js?1.0.0" id="qrcode-js-js"></script>
-    <script type="text/javascript" src="./static/js/script.js?1.0.0" id="script-js-js"></script>
-    <script type="text/javascript" src="./static/js/prettify.js?1.0.0" id="prettify-js"></script>
-    <script type="text/javascript" src="./static/js/instantclick.js?1.0.0" id="instantclick-js"></script>
-    <style type="text/css">
-        img#wpstats {
-            display: none
-        }
-    </style>
-    <link rel="icon" href="./static/images/favicon.ico" sizes="32x32">
-    <link rel="icon" href="./static/images/favicon.ico" sizes="192x192">
-    <link rel="apple-touch-icon" href="./static/images/favicon.ico">
-    <meta name="msapplication-TileImage" content="./static/images/favicon.ico">
-
-    <style type="text/css" id="wp-custom-css">
-        .header>.container::before {
-            content: '';
-            position: absolute;
-            top: -4rem;
-            width: 4px;
-            height: 4px;
-            background-color: red;
-            box-shadow: 4px 0 orange, 8px 0 yellow, 12px 0 green, 16px 0 blue, 20px 0 purple;
-        }
-    </style>
-    <style>
-        #instantclick {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            pointer-events: none;
-            z-index: 2147483647;
-            transition: opacity .25s .1s
-        }
-
-        .instantclick-bar {
-            background: #29d;
-            width: 100%;
-            margin-left: -100%;
-            height: 2px;
-            transition: all .25s
-        }
-    </style>
-</head>
-
-<body>
-    <script>
-        $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
-    </script>
-    <!-- Header -->
+#include("/static/themes/Admas/inc/layout.html")
+#@layout()
+#define css()
+#end
+#define content()
     <header class="header">
         <section class="container">
-            <hgroup itemscope="" itemtype="https://schema.org/WPHeader">
-                <h1 class="fullname"> 文章归档</h1>
+            <hgroup itemscope="">
+                <h1 class="fullname">文章归档</h1>
             </hgroup>
             <nav class="social">
                 <ul id="menu-socialx" class="menu">
@@ -78,18 +21,16 @@
             </nav>
             <nav class="header_nav">
                 <ul id="menu-header" class="menu">
-                    <li id="menu-item-4759"
-                        class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom menu-item-4759"><a
-                            href="/">首页</a></li>
-                    <li id="menu-item-3351"
-                        class="czs-clothes-l menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3351">
-                        <a href="https://biji.io/cat/theme">作品</a></li>
-                    <li id="menu-item-4754"
-                        class="czs-code-l menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4754"><a
-                            href="https://biji.io/cat/coding">代码</a></li>
-                    <li id="menu-item-3902"
-                        class="czs-gift-l menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3902"><a
-                            href="https://biji.io/cat/write">随笔</a></li>
+                    <li class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
+                        <a href="/" aria-current="page">首页</a></li>
+
+                    #menus()
+                        #for(menu : menus)
+                            <li class=" menu-item">
+                                <a href="#(menu.url)" target="#(menu.target == 0 ? '_self' : '_blank')"><i class="fa #(menu.icon ??)"></i> #(menu.name ??)</a>
+                            </li>
+                        #end
+                    #end
                 </ul>
             </nav>
         </section>
@@ -97,188 +38,28 @@
         <section class="infos">
             <div class="container">
                 <h2 class="fixed-title"></h2>
-                <!--<div class="fixed-menus"></div>-->
-
-                <div class="fields">
-                    <span><i class="czs-time-l"></i> <time datetime="2014-07-07T17:44:00+08:00"
-                            title="2014/07/07 17:44:00" itemprop="datePublished" pubdate="">7年前</time></span> /
-                    <span><i class="czs-talk-l"></i> 0评</span> /
-                    <a href="javascript:;" data-action="topTop" data-id="2717" class="dot-good ">
-                        <i class="czs-thumbs-up-l"></i><i class="czs-thumbs-up"></i>
-                        <span class="count">51</span>赞
-                    </a>
-                </div>
-
-                <div class="socials">
-                    <div class="donate">
-                        <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
-                        <div class="window">
-                            <ul>
-                                <li class="alipay"><img
-                                        src="https://biji-cdn.wuzii.com/wp-content/uploads/c_alipay.png"></li>
-                                <li><img src="https://biji-cdn.wuzii.com/wp-content/uploads/c_wxpay.png"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="share">
-                        <a href="javascript:void(0);"
-                            data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;margin=10&amp;data=https://biji.io/archives">
-                            <i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
-                        <div class="qrcode">
-                            <div class="img-box" title="https://biji.io/?p=4905"><canvas width="256" height="256"
-                                    style="display: none;"></canvas></div> <i>移动设备上继续阅读</i>
-                        </div>
-                    </div>
-                </div>
+                <div class="fixed-menus"></div>
+                <div class="placard">我在最没有能力的年纪，遇见了最想照顾一生的人。</div>
             </div>
         </section>
     </header>
+
     <section class="container">
-        <article class="post_article archives" itemscope="" itemtype="https://schema.org/Article">
-            <h3>2021</h3>
-            <table>
-                <tbody>
-                    <tr>
-                        <td width="80" style="text-align:right;">07-13</td>
-                        <td><a href="https://biji.io/2021/5552.html" rel="external" target="_blank">沪飘一年 - 31</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3>2020</h3>
-            <table>
-                <tbody>
-                    <tr>
-                        <td width="80" style="text-align:right;">12-08</td>
-                        <td><a href="https://biji.io/2020/5505.html" rel="external" target="_blank">写给2020 - 81</a></td>
-                    </tr>
-                    <tr>
-                        <td width="80" style="text-align:right;">06-01</td>
-                        <td><a href="https://biji.io/2020/5232.html" rel="external" target="_blank">Admas主题问题收集与更新计划 -
-                                120</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <article class="post_article archives">
+            #archivePage(pageSize=999)
+                #for(archive: archivePage.data)
+                    <h3>#(archive.date??)</h3>
+                    <table>
+                        <tbody>
+                        #for(archiveArticle: archive.articles??)
+                        <tr>
+                            <td width="80" style="text-align:right;">#date(archiveArticle.createTime, "MM/dd")</td>
+                            <td><a href="#(archiveArticle.url)" rel="external" target="_blank">#(archiveArticle.title)</a></td>
+                        </tr>
+                        #end
+                    </table>
+                #end
+            #end
         </article>
     </section>
-    <footer class="footer">
-        <section class="container">
-            <ul id="menu-bottom" class="menu">
-                <li id="menu-item-3357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3357">
-                    <a href="https://biji.io/about">关于博主</a></li>
-                <li id="menu-item-3356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3356">
-                    <a href="https://biji.io/links">友情链接</a></li>
-                <li id="menu-item-4787"
-                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2717 current_page_item menu-item-4787">
-                    <a href="https://biji.io/archives" aria-current="page">文章归档</a></li>
-                <li id="menu-item-3355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3355">
-                    <a href="https://biji.io/thelist">榜上有名</a></li>
-            </ul>
-            <div style="display: flex;justify-content: space-between;">
-                <div class="left">
-                    <span>© 2021 <a href="https://biji.io">设计笔记</a></span>
-                </div>
-                <div class="right">
-                    <span>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
-                </div>
-            </div>
-        </section>
-    </footer>
-
-    <div class="setting_tool iconfont">
-        <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
-        <a class="home" href="https://biji.io"><i class="czs-home-l"></i></a>
-        <a class="sosearch"><i class="czs-search-l"></i></a>
-        <a class="socolor"><i class="czs-clothes-l"></i></a>
-        <div class="s">
-            <form method="get" action="https://biji.io" class="search">
-                <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value=""
-                    required="required">
-            </form>
-        </div>
-        <div class="c">
-            <ul>
-                <li class="color undefined">默认</li>
-                <li class="color sepia">护眼</li>
-                <li class="color night">夜晚</li>
-                <li class="hr"></li>
-                <li class="font serif">Serif</li>
-                <li class="font sans">Sans</li>
-            </ul>
-        </div>
-    </div>
-    <script data-no-instant="">
-        (function ($) {
-            $.extend({
-                adamsOverload: function () {
-                    $(".post_article a").attr("rel", "external");
-                    $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
-                    $("a.vi,.gallery a,.attachment a").attr("rel", "");
-                    $.viewImage({
-                        'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
-                        'exclude': '.readerswall img,.gallery a img,.attachment a img'
-                    });
-                    Lately({
-                        'target': '.commentmetadata a:first-child,.infos time,.post-list time'
-                    });
-                    prettyPrint();
-
-                    $('ul.links li a').each(function () {
-                        if ($(this).parent().find('.bg').length === 0) {
-                            $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
-                        }
-                    });
-
-                    // * Safari
-                    if (navigator.vendor.indexOf("Apple") > -1) {
-                        $("[srcset]").each((index, img) => {
-                            img.outerHTML = img.outerHTML;
-                        });
-                    }
-                    if ($('.placard').length) {
-                        $.get("https://v1.hitokoto.cn", (data) => {
-                            $('.placard').text(data.hitokoto);
-                        });
-                    }
-                }
-            });
-        })(jQuery);
-        InstantClick.on('change', function (isInitialLoad) {
-            jQuery.adamsOverload();
-            if (isInitialLoad === false) {
-                // support MathJax
-                if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                // support google code prettify
-                if (typeof prettyPrint !== 'undefined') prettyPrint();
-                // support 百度统计
-                if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
-                // support google analytics
-                if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
-            }
-        });
-        InstantClick.on('wait', function () {
-            // pjax href click
-        });
-        InstantClick.on('fetch', function () {
-            // pjax begin
-        });
-        InstantClick.on('receive', function () {
-            // pjax end
-        });
-        InstantClick.init('mousedown');
-    </script>
-    <!--网站效率：0.759秒内查询了7次数据库-->
-
-
-    <!--
-Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
-
-Retrieved 1823 objects (208 KB) from Redis using Predis (v1.1.6).
--->
-    <img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A10.0&amp;blog=139908490&amp;post=0&amp;tz=8&amp;srv=biji.io&amp;host=biji.io&amp;ref=&amp;fcp=1471&amp;rand=0.4540617920752088"
-        alt=":)" width="6" height="5" id="wpstats">
-    <div id="instantclick" style="opacity: 0;">
-        <div id="instantclick-bar" class="instantclick-bar" style="transform: translate(100%);"></div>
-    </div>
-</body>
-
-</html>
+#end

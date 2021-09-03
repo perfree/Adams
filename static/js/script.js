@@ -33,9 +33,10 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
         }
         obj.scroll_top = $(this).scrollTop();
     });
+
     $(document).on('click', '.setting_tool a', function (e) {
         if ($(this).is('.back2top')) {
-            return $("html,body").animate({scrollTop: 0}, 400);
+            $('html,body').animate({scrollTop: 0}, 400);
         } else {
             obj.st = $('.setting_tool');
             if ($(this).is('.sosearch') && !obj.st.is('.search')) {
@@ -86,10 +87,6 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
         });
     });
 
-})(jQuery);
-
-
-(function ($) {
     $(document).ready(function () {
         if(typeof QRCode === "function" && $(".qrcode .img-box").length) {
             let href = location.href;
@@ -109,4 +106,6 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
             }
         });
     });
+
 })(jQuery);
+

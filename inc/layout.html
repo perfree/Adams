@@ -1,8 +1,10 @@
 #define layout()
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/public/libs/layui-v2.5.6/layui/css/layui.css">
     <link href="/static/themes/Admas/static/css/style.css?1.0.0" type="text/css" rel="stylesheet">
     <link href="/static/themes/Admas/static/caomei/style.css?1.0.0" type="text/css" rel="stylesheet">
     <link href="/static/public/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -12,52 +14,16 @@
     <script type="text/javascript" src="/static/themes/Admas/static/js/qrCode.min.js?1.0.0" id="qrcode-js-js"></script>
     <script type="text/javascript" src="/static/themes/Admas/static/js/script.js?1.0.0" id="script-js-js"></script>
     <script type="text/javascript" src="/static/themes/Admas/static/js/prettify.js?1.0.0" id="prettify-js"></script>
-    <style type="text/css">
-        img#wpstats {
-            display: none
-        }
-    </style>
     <link rel="icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')" sizes="32x32">
     <link rel="icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')" sizes="192x192">
     <link rel="apple-touch-icon" href="#option('WEB_LOGO','/static/public/images/favicon.ico')">
     <meta name="msapplication-TileImage" content="#option('WEB_LOGO','/static/public/images/favicon.ico')">
-    <style type="text/css" id="wp-custom-css">
-        .header>.container::before {
-            content: '';
-            position: absolute;
-            top: -4rem;
-            width: 4px;
-            height: 4px;
-            background-color: red;
-            box-shadow: 4px 0 orange, 8px 0 yellow, 12px 0 green, 16px 0 blue, 20px 0 purple;
-        }
-    </style>
-    <style>
-        #instantclick {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            pointer-events: none;
-            z-index: 2147483647;
-            transition: opacity .25s .1s
-        }
-
-        .instantclick-bar {
-            background: #29d;
-            width: 100%;
-            margin-left: -100%;
-            height: 2px;
-            transition: all .25s
-        }
-    </style>
     #@css?()
 </head>
 <body>
 <script>
     $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
 </script>
-#include("/static/themes/Admas/inc/header.html")
 #@content()
 #include("/static/themes/Admas/inc/footer.html")
 <script data-no-instant="">
@@ -97,19 +63,12 @@
         });
     })(jQuery);
 </script>
-<!--网站效率：0.759秒内查询了7次数据库-->
-
-
-<!--
-Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
-
-Retrieved 1823 objects (208 KB) from Redis using Predis (v1.1.6).
--->
 <img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A10.0&amp;blog=139908490&amp;post=0&amp;tz=8&amp;srv=biji.io&amp;host=biji.io&amp;ref=&amp;fcp=1471&amp;rand=0.4540617920752088"
      alt=":)" width="6" height="5" id="wpstats">
 <div id="instantclick" style="opacity: 0;">
     <div id="instantclick-bar" class="instantclick-bar" style="transform: translate(100%);"></div>
 </div>
+<script src="/static/public/libs/layui-v2.5.6/layui/layui.js"></script>
 #@script?()
 </body>
 </html>
