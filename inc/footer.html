@@ -4,19 +4,22 @@
             #categories()
                 #if(categories.size() > 0)
                     #for(category: categories)
-                        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3357">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="#(category.url)"> #(category.name ??)</a>
                         </li>
                     #end
                 #end
             #end
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/admin"> 网站后台</a>
+            </li>
         </ul>
         <div style="display: flex;justify-content: space-between;">
             <div class="left">
-                <span>© 2021 <a href="https://biji.io">设计笔记</a></span>
+                #option('WEB_COPYRIGHT', '© Copyright Perfree')
             </div>
             <div class="right">
-                <span>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
+                <span>Theme by <a href="https://github.com/perfree/Adams" target="_blank">Adams</a></span>
             </div>
         </div>
     </section>
@@ -27,8 +30,8 @@
     <a class="sosearch"><i class="czs-search-l"></i></a>
     <a class="socolor"><i class="czs-clothes-l"></i></a>
     <div class="s">
-        <form method="get" action="https://biji.io" class="search">
-            <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value=""
+        <form method="get" action="/article/search" class="search">
+            <input class="search-key" name="title" autocomplete="off" placeholder="输入关键词..." type="text" value=""
                    required="required">
         </form>
     </div>

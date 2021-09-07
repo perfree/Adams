@@ -1,0 +1,28 @@
+<nav class="social">
+    <ul id="menu-socialx" class="menu">
+        #if(option('ADMAS_SINA') != null && option('ADMAS_SINA') != '')
+            <li class="czs-weibo menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" href="#option('ADMAS_SINA')">WeiBo</a>
+            </li>
+        #end
+        #if(option('ADMAS_GITHUB') != null && option('ADMAS_GITHUB') != '')
+            <li class="czs-github-logo menu-item menu-item-type-custom menu-item-object-custom">
+                <a title="GitHub" target="_blank" href="#option('ADMAS_GITHUB')">GitHub</a>
+            </li>
+        #end
+    </ul>
+</nav>
+<nav class="header_nav">
+    <ul id="menu-header" class="menu">
+        <li class="menu-item">
+            <a href="/" aria-current="page"><i class="fa fa-home"></i> 首页</a>
+        </li>
+        #menus()
+            #for(menu : menus)
+                <li class=" menu-item">
+                    <a href="#(menu.url)" target="#(menu.target == 0 ? '_self' : '_blank')"><i class="fa #(menu.icon ??)"></i> #(menu.name ??)</a>
+                </li>
+            #end
+        #end
+    </ul>
+</nav>

@@ -10,31 +10,7 @@
             <hgroup itemscope="" >
                 <h1 class="fullname"> #(article.title ??)</h1>
             </hgroup>
-            <nav class="social">
-                <ul id="menu-socialx" class="menu">
-                    <li id="menu-item-4834" class="czs-weibo menu-item menu-item-type-custom menu-item-object-custom"><a
-                            target="_blank" href="http://weibo.com/742206125">WeiBo</a></li>
-                    <li id="menu-item-4832"
-                        class="czs-github-logo menu-item menu-item-type-custom menu-item-object-custom"><a
-                            title="GitHub" target="_blank" href="https://github.com/Tokinx">GitHub</a></li>
-                    <li id="menu-item-4831" class="czs-rss menu-item menu-item-type-custom menu-item-object-custom"><a
-                            title="RSS" target="_blank" href="/feed">RSS</a></li>
-                </ul>
-            </nav>
-            <nav class="header_nav">
-                <ul id="menu-header" class="menu">
-                    <li class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
-                        <a href="/" aria-current="page">首页</a></li>
-
-                    #menus()
-                        #for(menu : menus)
-                            <li class=" menu-item">
-                                <a href="#(menu.url)" target="#(menu.target == 0 ? '_self' : '_blank')"><i class="fa #(menu.icon ??)"></i> #(menu.name ??)</a>
-                            </li>
-                        #end
-                    #end
-                </ul>
-            </nav>
+            #include("/static/themes/Admas/inc/header.html")
         </section>
 
         <section class="infos ">

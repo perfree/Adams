@@ -11,12 +11,17 @@
     min-height: 80px;
     padding: 3px;
     outline: none;
-    border: 1px solid #ddd;
+    border: none;
+    font-size: .8rem;
+    line-height: 18px;
     color: inherit;
+    margin: 6px 0;
+    box-shadow: 0 0 0 1px rgb(152 152 152 / 20%);
 }
 .p-comment-label{
     display: block;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 14px;
 }
 .p-comment-input{
     width: 100%;
@@ -29,8 +34,16 @@
     margin-top: 10px;
 }
 .p-submit-comment{
-    padding: 3px;
+    /* padding: 3px; */
     cursor: pointer;
+    width: 100%;
+    padding: 8px 10px;
+    box-shadow: 0 0 0 1px rgb(152 152 152 / 20%);
+    background: #fff;
+    font-size: .8rem;
+    margin: 6px 0;
+    line-height: 18px;
+    border: none!important;
 }
 .p-comment-avatar{
     width: 32px;
@@ -73,10 +86,11 @@
 }
 .p-cancel-reply{
     cursor: pointer;
-    color: #3354AA;
+    /* color: #3354AA; */
     position: absolute;
     right: 0;
-    top: 8px;
+    top: 10px;
+    font-size: 14px;
     display: none;
 }
 .p-reply-user{
@@ -85,4 +99,18 @@
     font-size: 15px;
     text-decoration: none;
     cursor: pointer;
+}
+.p-submit-comment:hover {
+    background: #3274ff;
+    box-shadow: 0 0 0 1px #3274ff;
+    color: #fff;
+}
+body.sepia .submit{
+    background: #f3eacb;
+    border: 1px solid #a98c51;
+    color: #a98c51;
+}
+body.night .submit{
+    color: #bdcadb;
+    background: #1c1f2b;
 }

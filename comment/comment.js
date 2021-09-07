@@ -10,13 +10,13 @@ $('#commentListBox').on('click','.p-cancel-reply',function() {
     cancelReply();
 });
 
-$('.p-comment-box').on('click','#submitComment',function() {
+$('.p-comment-box').on('click','#submit',function() {
     submitComment();
 });
 
 
 function submitComment() {
-    var form = $("#commentForm").serializeArray()
+    var form = $("#commentform").serializeArray()
     var data = {};
     $.each(form,function(i,v){
         data[v.name] = v.value;

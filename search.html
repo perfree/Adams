@@ -1,0 +1,58 @@
+#include("/static/themes/Admas/inc/layout.html")
+#@layout()
+#define css()
+#end
+#define content()
+    <header class="header">
+        <section class="container">
+            <hgroup itemscope="">
+                <h1 class="fullname">#option('WEB_NAME','未设置')</h1>
+            </hgroup>
+            #include("/static/themes/Admas/inc/header.html")
+        </section>
+
+        <section class="infos">
+            <div class="container">
+                <h2 class="fixed-title"></h2>
+                <div class="fixed-menus"></div>
+                <div class="placard">我在最没有能力的年纪，遇见了最想照顾一生的人。</div>
+            </div>
+        </section>
+    </header>
+
+    <section class="posts main-load">
+        <div class="container">
+            <div class="post-list">
+                #articlePage(pageSize=10)
+                    #for(article: articlePage.data)
+                        <article class="meta" itemscope="">
+                            <header>
+                                <a href="#(article.url)" itemprop="url">
+                                    <h2 itemprop="name headline">#(article.title)</h2>
+                                </a>
+                            </header>
+                            <main>
+                                <p itemprop="articleBody">#mdSummary(article.content,200)...</p>
+                            </main>
+                            <footer>
+                                <span class="time">#timeAgo(article.createTime)发布</span>
+                                <span class="hr"></span>
+                                <span class="comments">#(article.commentCount ??) 条评论</span>
+                                <span class="hr"></span><span class="likes">#(article.viewCount ??) 人阅读</span>
+                            </footer>
+                        </article>
+                    #else
+                    <article class="meta">
+                        <h3 style="font-size: 3em;margin: 0 0 20px;">Sorry!</h3>
+                        <p>这个页面没有你要找的内容。</p>
+                    </article>
+                    #end
+                #end
+
+                #if(articlePage.pagers)
+                    #pageRender(articlePage, preText="«",nextText="»")
+                #end
+            </div>
+        </div>
+    </section>
+#end

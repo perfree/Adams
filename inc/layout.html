@@ -26,47 +26,41 @@
 #@content()
 #include("/static/themes/Admas/inc/footer.html")
 <script data-no-instant="">
-    (function ($) {
-        $.extend({
-            adamsOverload: function () {
-                $(".post_article a").attr("rel", "external");
-                $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
-                $("a.vi,.gallery a,.attachment a").attr("rel", "");
-                $.viewImage({
-                    'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
-                    'exclude': '.readerswall img,.gallery a img,.attachment a img'
-                });
-                Lately({
-                    'target': '.commentmetadata a:first-child,.infos time,.post-list time'
-                });
-                prettyPrint();
+    $(".post_article a").attr("rel", "external");
+    $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
+    $("a.vi,.gallery a,.attachment a").attr("rel", "");
+    $.viewImage({
+        'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
+        'exclude': '.readerswall img,.gallery a img,.attachment a img'
+    });
+    Lately({
+        'target': '.commentmetadata a:first-child,.infos time,.post-list time'
+    });
 
-                $('ul.links li a').each(function () {
-                    if ($(this).parent().find('.bg').length === 0) {
-                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
-                    }
-                });
+    $('ul.links li a').each(function () {
+        if ($(this).parent().find('.bg').length === 0) {
+            $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
+        }
+    });
 
-                // * Safari
-                if (navigator.vendor.indexOf("Apple") > -1) {
-                    $("[srcset]").each((index, img) => {
-                        img.outerHTML = img.outerHTML;
-                    });
-                }
-                if ($('.placard').length) {
-                    $.get("https://v1.hitokoto.cn", (data) => {
-                        $('.placard').text(data.hitokoto);
-                    });
-                }
-            }
+    // * Safari
+    if (navigator.vendor.indexOf("Apple") > -1) {
+        $("[srcset]").each((index, img) => {
+            img.outerHTML = img.outerHTML;
         });
-    })(jQuery);
+    }
+    if ($('.placard').length) {
+        $.get("https://v1.hitokoto.cn", (data) => {
+            $('.placard').text(data.hitokoto);
+        });
+    }
+    let menu = $(".menu-item");
+    for (let i =0 ; i < menu.length-1;i++) {
+        if (window.location.pathname === $(menu[i]).children("a").attr("href")) {
+            $(menu[i]).addClass("current-menu-item current_page_item");
+        }
+    }
 </script>
-<img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A10.0&amp;blog=139908490&amp;post=0&amp;tz=8&amp;srv=biji.io&amp;host=biji.io&amp;ref=&amp;fcp=1471&amp;rand=0.4540617920752088"
-     alt=":)" width="6" height="5" id="wpstats">
-<div id="instantclick" style="opacity: 0;">
-    <div id="instantclick-bar" class="instantclick-bar" style="transform: translate(100%);"></div>
-</div>
 <script src="/static/public/libs/layui-v2.5.6/layui/layui.js"></script>
 #@script?()
 </body>

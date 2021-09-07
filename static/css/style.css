@@ -455,6 +455,7 @@ body.sepia .archives tr a,
 body.sepia ul.link-items li a,
 body.sepia .readerswall li a {
     color: #b38a60;
+    background: #f3eacb;
 }
 
 body.sepia .header .menu li:hover,
@@ -549,7 +550,8 @@ body.sepia #commentform input,
 body.sepia #commentform textarea,
 body.sepia #commentform input#submit:focus {
     background: #f3eacb;
-    border: 1px solid #a98c51;
+    border: 1px solid #a98c51!important;
+    box-shadow: none;
     color: #a98c51;
 }
 
@@ -610,6 +612,8 @@ body.night .archives tr a,
 body.night ul.link-items li a,
 body.night .readerswall li a {
     color: #666e8e;
+    /* background-color: #656D78; */
+    background: #1c1f2b;
 }
 
 body.night .header .menu li:hover,
@@ -715,13 +719,14 @@ body.night #commentform textarea,
 body.night #commentform input#submit:focus {
     color: #bdcadb;
     background: #1c1f2b;
-    border: 1px solid #393f56;
+    border: 1px solid #393f56!important;
+    box-shadow: none;
 }
 
 body.night #commentform textarea:focus,
 body.night #commentform input:focus,
 body.night #commentform input#submit:hover {
-    border-color: #bdcadb;
+    border-color: #bdcadb!important;
 }
 
 body.night #commentform input#submit {
@@ -816,4 +821,20 @@ pre code.hljs {
     overflow-x: auto;
     padding: 1em;
     font-family: Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;
+}
+body.night .m-pager {
+    color: #666e8e;
+    background: #1c1f2b;
+}
+
+body.sepia .m-pager {
+    color: #704214 !important;
+    background: #f3eacb;
+}
+body.night .hljs {
+    color: #AAB2BD;
+}
+body.sepia .hljs{
+    background: #f3eacb;
+    color: #704214;
 }
