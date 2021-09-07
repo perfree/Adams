@@ -1,0 +1,95 @@
+#include("/static/themes/Admas/inc/layout.html")
+#@layout()
+#define css()
+<link href="/static/themes/Admas/comment/comment.css" rel="stylesheet">
+#end
+#define content()
+#if(article)
+    <header class="header">
+        <section class="container">
+            <hgroup itemscope="" >
+                <h1 class="fullname"> #(article.title ??)</h1>
+            </hgroup>
+            <nav class="social">
+                <ul id="menu-socialx" class="menu">
+                    <li id="menu-item-4834" class="czs-weibo menu-item menu-item-type-custom menu-item-object-custom"><a
+                            target="_blank" href="http://weibo.com/742206125">WeiBo</a></li>
+                    <li id="menu-item-4832"
+                        class="czs-github-logo menu-item menu-item-type-custom menu-item-object-custom"><a
+                            title="GitHub" target="_blank" href="https://github.com/Tokinx">GitHub</a></li>
+                    <li id="menu-item-4831" class="czs-rss menu-item menu-item-type-custom menu-item-object-custom"><a
+                            title="RSS" target="_blank" href="/feed">RSS</a></li>
+                </ul>
+            </nav>
+            <nav class="header_nav">
+                <ul id="menu-header" class="menu">
+                    <li class="czs-home-l menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
+                        <a href="/" aria-current="page">首页</a></li>
+
+                    #menus()
+                        #for(menu : menus)
+                            <li class=" menu-item">
+                                <a href="#(menu.url)" target="#(menu.target == 0 ? '_self' : '_blank')"><i class="fa #(menu.icon ??)"></i> #(menu.name ??)</a>
+                            </li>
+                        #end
+                    #end
+                </ul>
+            </nav>
+        </section>
+
+        <section class="infos ">
+            <div class="container">
+                <h2 class="fixed-title"> #(article.title ??)</h2>
+                <!--<div class="fixed-menus"></div>-->
+
+                <div class="fields">
+                    <span><i class="czs-time-l"></i> #timeAgo(article.createTime)</span> /
+                    <span><i class="czs-talk-l"></i> #(article.commentCount ??)评</span> /
+                    <span><i class="czs-bar-chart"></i> #(article.viewCount ??)阅读</span>
+
+                </div>
+
+                <div class="socials">
+                    <div class="donate">
+                        <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
+                        <div class="window">
+                            <ul>
+                                <li class="alipay"><img
+                                        src="https://biji-cdn.wuzii.com/wp-content/uploads/c_alipay.png"></li>
+                                <li><img src="https://biji-cdn.wuzii.com/wp-content/uploads/c_wxpay.png"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <a href="javascript:void(0);"
+                            data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;margin=10&amp;data=#option('WEB_SITE','')/article/#(article.id)">
+                            <i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
+                        <div class="qrcode">
+                            <div class="img-box" title="https://biji.io/?p=5232"><canvas width="256" height="256"
+                                    style="display: none;"></canvas></div> <i>移动设备上继续阅读</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header><!-- Content -->
+    <section class="container">
+        <article class="post_article">
+            #mdToHtml(article.content ??)
+        </article>
+        <ul class="tags">
+            #for(tag : article.tags)
+                <li><a href="/tag/#(tag.id??)" rel="tag">#(tag.name??)</a></li>
+            #end
+        </ul>
+    </section><!-- Comments -->
+    <section class="comments">
+        <div class="container" data-no-instant="">
+            #include("/static/themes/Admas/comment/comment.html")
+        </div>
+    </section>
+#end
+#end
+#define script()
+<script src="/static/themes/Admas/comment/comment.js"></script>
+#end

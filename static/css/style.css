@@ -811,3 +811,9 @@ img#wpstats {
     background: #3274ff;
     color: white;
 }
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    font-family: Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;
+}

@@ -1,7 +1,7 @@
 #include("/static/themes/Admas/inc/layout.html")
 #@layout()
 #define css()
-<link href="/static/public/components/comment/comment.css" rel="stylesheet">
+<link href="/static/themes/Admas/comment/comment.css" rel="stylesheet">
 #end
 #define content()
     <header class="header">
@@ -74,131 +74,12 @@
     </section><!-- Comments -->
 <section class="comments">
     <div class="container" data-no-instant="">
-        #commentPage(pageSize=6)
-        <div id="comments" class="comments-area">
-            <ol class="comment-list">
-                #for(comment : commentPage.data)
-                    <li class="comment even thread-even depth-1 parent">
-                        <div class="comment-body">
-                            <div class="comment-author vcard">
-                                <img alt=""
-                                     src="#(isBlank(comment.avatar) ? '/static/public/images/user.png' : comment.avatar.replace('http://www.gravatar.com/','https://gravatar.loli.net/'))"
-                                     srcset="#(isBlank(comment.avatar) ? '/static/public/images/user.png' : comment.avatar.replace('http://www.gravatar.com/','https://gravatar.loli.net/'))"
-                                     class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
-                                    class="fn"> #(comment.userName??)</cite><span class="says">说道：</span>
-                            </div>
-
-                            <div class="comment-meta commentmetadata">
-                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16694"
-                                   title="2021/08/10 16:47">19天前</a>
-                            </div>
-
-                            <p>大佬问一下 我的头像怎么都是白的 头像加速那个需要替换什么连接？</p>
-
-                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
-                                                  href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16694#respond"
-                                                  data-commentid="16694" data-postid="4905" data-belowelement="div-comment-16694"
-                                                  data-respondelement="respond" data-replyto="回复给BIGEYES"
-                                                  aria-label="回复给BIGEYES">回复</a></div>
-                        </div>
-                        <ul class="children">
-                            <li class="comment byuser comment-author-admin bypostauthor odd alt depth-2 parent"
-                                id="comment-16695">
-                                <div id="div-comment-16695" class="comment-body">
-                                    <div class="comment-author vcard">
-                                        <img alt=""
-                                             src="https:////gravatar.loli.net/avatar/22278c1d83002246dca48b52e306b1c9?s=32&amp;d=mm&amp;r=g"
-                                             srcset="https:////gravatar.loli.net/avatar/22278c1d83002246dca48b52e306b1c9?s=64&amp;d=mm&amp;r=g 2x"
-                                             class="avatar avatar-32 photo" height="32" width="32" loading="lazy"> <cite
-                                            class="fn"><a href="https://biji.io" rel="external nofollow ugc"
-                                                          class="url">Tokin</a></cite><span class="says">说道：</span>
-                                    </div>
-
-                                    <div class="comment-meta commentmetadata">
-                                        <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16695"
-                                           title="2021/08/10 22:25">19天前</a>
-                                    </div>
-
-                                    <p>@<a href="#comment-16694">BIGEYES</a> 我现在用的是<code
-                                            class="prettyprint prettyprinted"
-                                            style=""><span class="com">//gravatar.loli.net/avatar</span></code></p>
-
-                                    <div class="reply"><a rel="nofollow" class="comment-reply-link"
-                                                          href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16695#respond"
-                                                          data-commentid="16695" data-postid="4905"
-                                                          data-belowelement="div-comment-16695" data-respondelement="respond"
-                                                          data-replyto="回复给Tokin" aria-label="回复给Tokin">回复</a></div>
-                                </div>
-                                <ul class="children">
-                                    <li class="comment even depth-3" id="comment-16696">
-                                        <div id="div-comment-16696" class="comment-body">
-                                            <div class="comment-author vcard">
-                                                <img alt=""
-                                                     src="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=32&amp;d=mm&amp;r=g"
-                                                     srcset="https:////gravatar.loli.net/avatar/717c9f2d211dcf9d91546661a1e362af?s=64&amp;d=mm&amp;r=g 2x"
-                                                     class="avatar avatar-32 photo" height="32" width="32"
-                                                     loading="lazy"> <cite class="fn">BIGEYES</cite><span
-                                                    class="says">说道：</span>
-                                            </div>
-
-                                            <div class="comment-meta commentmetadata">
-                                                <a href="https://biji.io/2017/4905.html/comment-page-40#comment-16696"
-                                                   title="2021/08/11 07:56">19天前</a>
-                                            </div>
-
-                                            <p>@<a href="#comment-16695">Tokin</a> 好的 谢谢你</p>
-
-                                            <div class="reply"><a rel="nofollow" class="comment-reply-link"
-                                                                  href="https://biji.io/2017/4905.html/comment-page-40?replytocom=16696#respond"
-                                                                  data-commentid="16696" data-postid="4905"
-                                                                  data-belowelement="div-comment-16696" data-respondelement="respond"
-                                                                  data-replyto="回复给BIGEYES" aria-label="回复给BIGEYES">回复</a></div>
-                                        </div>
-                                    </li><!-- #comment-## -->
-                                </ul><!-- .children -->
-                            </li><!-- #comment-## -->
-                        </ul><!-- .children -->
-                    </li><!-- #comment-## -->
-                #end
-            </ol>
-
-            <nav class="navigation comment-navigation" role="navigation" aria-label="评论">
-                <h2 class="screen-reader-text">评论导航</h2>
-                <div class="nav-links">
-                    <div class="nav-previous"><a href="https://biji.io/2017/4905.html/comment-page-39#comments">Old
-                        comments</a></div>
-                </div>
-            </nav>
-        </div>
-        <div id="respond" class="comment-respond">
-            <h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow"
-                                                                            id="cancel-comment-reply-link" href="/2017/4905.html#respond"
-                                                                            style="display:none;">取消回复</a></small></h3>
-            <form action="https://biji.io/wp-comments-post.php" method="post" id="commentform" class="comment-form">
-                <p class="comment-notes"><span id="email-notes">您的电子邮箱地址不会被公开。</span> 必填项已用<span
-                        class="required">*</span>标注</p>
-                <p class="comment-form-author"><label for="author">显示名称 <span class="required">*</span></label>
-                    <input id="author" name="author" type="text" value="perfree" size="30" maxlength="245"
-                           required="required"></p>
-                <p class="comment-form-email"><label for="email">电子邮箱地址 <span class="required">*</span></label>
-                    <input id="email" name="email" type="text" value="perfree@126.com" size="30" maxlength="100"
-                           aria-describedby="email-notes" required="required"></p>
-                <p class="comment-form-url"><label for="url">网站地址</label> <input id="url" name="url" type="text"
-                                                                                 value="http://www.yinpengfei.com" size="30" maxlength="200"></p>
-                <p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment"
-                                                                                          name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
-                <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论">
-                    <input type="hidden" name="comment_post_ID" value="4905" id="comment_post_ID">
-                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                </p>
-            </form>
-        </div><!-- #respond -->
-        #end
+        #include("/static/themes/Admas/comment/comment.html")
     </div>
 </section>
 
 
 #end
 #define script()
-<script src="/static/themes/perfree/static/js/comment.js"></script>
+<script src="/static/themes/Admas/comment/comment.js"></script>
 #end
