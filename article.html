@@ -1,8 +1,8 @@
-#include("/static/themes/Admas/inc/layout.html")
+#include("/static/themes/Adams/inc/layout.html")
 #@layout()
 #define css()
-<link href="/static/themes/Admas/static/libs/highlight/styles/atom-one-light.min.css" rel="stylesheet">
-<link href="/static/themes/Admas/comment/comment.css" rel="stylesheet">
+<link href="/static/themes/Adams/static/libs/highlight/styles/atom-one-light.min.css" rel="stylesheet">
+<link href="/static/themes/Adams/comment/comment.css" rel="stylesheet">
 #end
 #define content()
     <header class="header">
@@ -10,7 +10,7 @@
             <hgroup itemscope="" >
                 <h1 class="fullname"> #(article.title ??)</h1>
             </hgroup>
-            #include("/static/themes/Admas/inc/header.html")
+            #include("/static/themes/Adams/inc/header.html")
         </section>
 
         <section class="infos">
@@ -26,16 +26,18 @@
                 </div>
 
                 <div class="socials">
-                    <div class="donate">
-                        <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
-                        <div class="window">
-                            <ul>
-                                <li class="alipay"><img
-                                        src="https://biji-cdn.wuzii.com/wp-content/uploads/c_alipay.png"></li>
-                                <li><img src="https://biji-cdn.wuzii.com/wp-content/uploads/c_wxpay.png"></li>
-                            </ul>
+                    #if(option('PERFREE_WECHAT_IMG') && option('PERFREE_ALIPAY_IMG'))
+                        <div class="donate">
+                            <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
+                            <div class="window">
+                                <ul>
+                                    <li class="alipay"><img
+                                            src="#option('PERFREE_ALIPAY_IMG')"></li>
+                                    <li><img src="#option('PERFREE_WECHAT_IMG')"></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    #end
                     <div class="share">
                         <a href="javascript:void(0);"
                             data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;margin=10&amp;data=#option('WEB_SITE','')/article/#(article.id)">
@@ -75,14 +77,14 @@
     </section><!-- Comments -->
     <section class="comments">
         <div class="container" data-no-instant="">
-            #include("/static/themes/Admas/comment/comment.html")
+            #include("/static/themes/Adams/comment/comment.html")
         </div>
     </section>
 
 #end
 #define script()
-<script src="/static/themes/Admas/static/libs/highlight/highlight.pack.js"></script>
-<script src="/static/themes/Admas/comment/comment.js"></script>
+<script src="/static/themes/Adams/static/libs/highlight/highlight.pack.js"></script>
+<script src="/static/themes/Adams/comment/comment.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>
